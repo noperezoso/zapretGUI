@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FiltersWindow</class>
+ <widget class="QDialog" name="FiltersWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>360</width>
+    <height>430</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Изменение фильтров</string>
+  </property>
+  <property name="locale">
+   <locale language="Russian" country="Russia"/>
+  </property>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>55</y>
+     <width>320</width>
+     <height>320</height>
+    </rect>
+   </property>
+   <property name="locale">
+    <locale language="Russian" country="Russia"/>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>320</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="locale">
+    <locale language="Russian" country="Russia"/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>390</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="locale">
+    <locale language="Russian" country="Russia"/>
+   </property>
+   <property name="text">
+    <string>Применить</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>390</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="locale">
+    <locale language="Russian" country="Russia"/>
+   </property>
+   <property name="text">
+    <string>Очистить</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

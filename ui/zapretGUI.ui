@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>280</width>
+    <height>260</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>zapretGUI</string>
+  </property>
+  <property name="locale">
+   <locale language="Russian" country="Russia"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="groupBox_1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>110</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="locale">
+     <locale language="Russian" country="Russia"/>
+    </property>
+    <property name="title">
+     <string>Служба</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+    <widget class="QPushButton" name="pushButton_13">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>85</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="locale">
+      <locale language="Russian" country="Russia"/>
+     </property>
+     <property name="text">
+      <string>Запустить</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_14">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>115</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="locale">
+      <locale language="Russian" country="Russia"/>
+     </property>
+     <property name="text">
+      <string>Остановить</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_11">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>25</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="locale">
+      <locale language="Russian" country="Russia"/>
+     </property>
+     <property name="text">
+      <string>Создать</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_12">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>55</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="locale">
+      <locale language="Russian" country="Russia"/>
+     </property>
+     <property name="text">
+      <string>Удалить</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton_02">
+    <property name="geometry">
+     <rect>
+      <x>165</x>
+      <y>20</y>
+      <width>80</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="locale">
+     <locale language="Russian" country="Russia"/>
+    </property>
+    <property name="text">
+     <string>Фильтры</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>80</y>
+      <width>110</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="locale">
+     <locale language="Russian" country="Russia"/>
+    </property>
+    <property name="title">
+     <string>Задача</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+    <widget class="QPushButton" name="pushButton_23">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>85</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="locale">
+      <locale language="Russian" country="Russia"/>
+     </property>
+     <property name="text">
+      <string>Запустить</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_24">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>115</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="locale">
+      <locale language="Russian" country="Russia"/>
+     </property>
+     <property name="text">
+      <string>Остановить</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_21">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>25</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="locale">
+      <locale language="Russian" country="Russia"/>
+     </property>
+     <property name="text">
+      <string>Создать</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_22">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>55</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="locale">
+      <locale language="Russian" country="Russia"/>
+     </property>
+     <property name="text">
+      <string>Удалить</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton_00">
+    <property name="geometry">
+     <rect>
+      <x>35</x>
+      <y>20</y>
+      <width>80</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="locale">
+     <locale language="Russian" country="Russia"/>
+    </property>
+    <property name="text">
+     <string>Установить</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
