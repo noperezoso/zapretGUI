@@ -1,4 +1,5 @@
 from PySide6 import QtWidgets
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QDialog
 import sys, os
 import zapretAPI as zapi
@@ -120,5 +121,6 @@ class FiltersWindow(QDialog, Ui_FiltersWindow):
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
+    app.setWindowIcon(QIcon("icon.ico"))
     window = MainWindow()
     sys.exit(app.exec())
