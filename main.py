@@ -121,6 +121,7 @@ class FiltersWindow(QDialog, Ui_FiltersWindow):
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
+    app.setStyle("Fusion")
     app.setWindowIcon(QIcon("icon.ico"))
     window = MainWindow()
     sys.exit(app.exec())
