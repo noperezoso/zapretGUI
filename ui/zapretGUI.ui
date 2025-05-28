@@ -22,7 +22,7 @@
      <rect>
       <x>20</x>
       <y>80</y>
-      <width>110</width>
+      <width>240</width>
       <height>150</height>
      </rect>
     </property>
@@ -30,7 +30,7 @@
      <locale language="Russian" country="Russia"/>
     </property>
     <property name="title">
-     <string>Служба</string>
+     <string>Управление</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -38,8 +38,8 @@
     <widget class="QPushButton" name="pushButton_13">
      <property name="geometry">
       <rect>
-       <x>15</x>
-       <y>85</y>
+       <x>145</x>
+       <y>25</y>
        <width>80</width>
        <height>20</height>
       </rect>
@@ -54,8 +54,8 @@
     <widget class="QPushButton" name="pushButton_14">
      <property name="geometry">
       <rect>
-       <x>15</x>
-       <y>115</y>
+       <x>145</x>
+       <y>55</y>
        <width>80</width>
        <height>20</height>
       </rect>
@@ -68,10 +68,13 @@
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_11">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
-       <x>15</x>
-       <y>25</y>
+       <x>145</x>
+       <y>85</y>
        <width>80</width>
        <height>20</height>
       </rect>
@@ -84,10 +87,13 @@
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_12">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
-       <x>15</x>
-       <y>55</y>
+       <x>145</x>
+       <y>115</y>
        <width>80</width>
        <height>20</height>
       </rect>
@@ -97,6 +103,61 @@
      </property>
      <property name="text">
       <string>Удалить</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_11">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>55</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Нет</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_12">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>85</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Служба</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_13">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>115</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Задача</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>15</x>
+       <y>25</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Автозапуск:</string>
      </property>
     </widget>
    </widget>
@@ -115,89 +176,6 @@
     <property name="text">
      <string>Фильтры</string>
     </property>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_2">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>80</y>
-      <width>110</width>
-      <height>150</height>
-     </rect>
-    </property>
-    <property name="locale">
-     <locale language="Russian" country="Russia"/>
-    </property>
-    <property name="title">
-     <string>Задача</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-    <widget class="QPushButton" name="pushButton_23">
-     <property name="geometry">
-      <rect>
-       <x>15</x>
-       <y>85</y>
-       <width>80</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="locale">
-      <locale language="Russian" country="Russia"/>
-     </property>
-     <property name="text">
-      <string>Запустить</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_24">
-     <property name="geometry">
-      <rect>
-       <x>15</x>
-       <y>115</y>
-       <width>80</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="locale">
-      <locale language="Russian" country="Russia"/>
-     </property>
-     <property name="text">
-      <string>Остановить</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_21">
-     <property name="geometry">
-      <rect>
-       <x>15</x>
-       <y>25</y>
-       <width>80</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="locale">
-      <locale language="Russian" country="Russia"/>
-     </property>
-     <property name="text">
-      <string>Создать</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_22">
-     <property name="geometry">
-      <rect>
-       <x>15</x>
-       <y>55</y>
-       <width>80</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="locale">
-      <locale language="Russian" country="Russia"/>
-     </property>
-     <property name="text">
-      <string>Удалить</string>
-     </property>
-    </widget>
    </widget>
    <widget class="QPushButton" name="pushButton_00">
     <property name="geometry">
@@ -218,5 +196,102 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>radioButton_11</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushButton_11</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>74</x>
+     <y>144</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>204</x>
+     <y>174</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_11</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushButton_12</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>74</x>
+     <y>144</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>204</x>
+     <y>204</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_12</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushButton_11</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>74</x>
+     <y>174</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>204</x>
+     <y>174</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_13</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushButton_11</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>74</x>
+     <y>204</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>204</x>
+     <y>174</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_12</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushButton_12</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>74</x>
+     <y>174</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>204</x>
+     <y>204</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_13</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushButton_12</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>74</x>
+     <y>204</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>204</x>
+     <y>204</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

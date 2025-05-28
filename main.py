@@ -1,6 +1,6 @@
 from PySide6 import QtWidgets
 from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QDialog
+from PySide6.QtWidgets import QDialog, QButtonGroup
 import sys, os
 import zapretAPI as zapi
 from updater import Updater
@@ -23,20 +23,15 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             self.pushButton_00.setText('Установить')
 
+        self.filters_window = FiltersWindow(self)
         self.pushButton_02.clicked.connect(self.open_filters)
 
-        self.pushButton_11.clicked.connect(self.create_service)
-        self.pushButton_11.clicked.connect(self.create_service)
-        self.pushButton_12.clicked.connect(self.delete_service)
-        self.pushButton_13.clicked.connect(self.start_service)
-        self.pushButton_14.clicked.connect(self.stop_service)
-
-        self.pushButton_21.clicked.connect(self.create_task)
-        self.pushButton_22.clicked.connect(self.delete_task)
-        self.pushButton_23.clicked.connect(self.start_task)
-        self.pushButton_24.clicked.connect(self.stop_task)
+        self.buttonGroup_11 = QButtonGroup()
+        self.buttonGroup_11.addButton(self.radioButton_11)
+        self.buttonGroup_11.addButton(self.radioButton_12)
+        self.buttonGroup_11.addButton(self.radioButton_13)
         
-        self.filters_window = FiltersWindow(self)
+        self.buttonGroup_11.buttonClicked.connect(self.on_radiobutton_toggled)
 
         self.show()
 
@@ -50,6 +45,22 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def open_filters(self):
         '''Opens filters window.'''
         self.filters_window.exec()
+
+    def on_radiobutton_toggled(self):
+        '''Change push buttons functions depending on radio button selected.'''
+        selected_button = self.buttonGroup_11.checkedButton()
+        if selected_button == self.radioButton_12:
+            self.pushButton_11.clicked.connect(self.create_service)
+            self.pushButton_12.clicked.connect(self.delete_service)
+            self.pushButton_13.clicked.connect(self.start_service)
+            self.pushButton_14.clicked.connect(self.stop_service)
+        elif selected_button == self.radioButton_13:
+            self.pushButton_11.clicked.connect(self.create_task)
+            self.pushButton_12.clicked.connect(self.delete_task)
+            self.pushButton_13.clicked.connect(self.start_task)
+            self.pushButton_14.clicked.connect(self.stop_task)
+        else:
+            pass
 
     def create_service(self):
         if self.filters_window.z_args:
