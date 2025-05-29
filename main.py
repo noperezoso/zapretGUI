@@ -2,6 +2,7 @@ from PySide6 import QtWidgets
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QDialog, QButtonGroup
 import sys, os
+import resources_rc
 import zapretAPI as zapi
 from updater import Updater
 from zapretGUI import Ui_MainWindow
@@ -133,6 +134,6 @@ class FiltersWindow(QDialog, Ui_FiltersWindow):
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     app.setStyle("Fusion")
-    app.setWindowIcon(QIcon("icon.ico"))
+    app.setWindowIcon(QIcon(":/icon.ico"))
     window = MainWindow()
     sys.exit(app.exec())
