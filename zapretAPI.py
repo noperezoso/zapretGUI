@@ -55,17 +55,18 @@ class ArgParser:
             self.strat_dir = strategies_dir
         else:
             self.strat_dir = EXEC_DIR
-        
+
         self.get_strat_files()
 
     def filter_args(self, args):
+        '''Clean and adjust arguments.'''
         if type(args) is str:
-            args = args.replace('^', '')
+            args = args.replace('^', '').replace(' \\', '')
             args = args.split()
 
         for i in range(len(args)):
-            args[i] = args[i].strip()
-            args[i] = args[i].replace('%~dp0', self.exec_dir)
+            args[i] = args[i].strip().replace('"', '')
+            args[i] = args[i].replace('%~dp0', EXEC_DIR + '\\')
         
         return args
 
