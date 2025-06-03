@@ -7,13 +7,19 @@ class Service:
             zapret_dir = os.getcwd() + '\\zapret-win-bundle-master\\zapret-winws'
         self.exec_dir = os.path.abspath(zapret_dir) + '\\'
 
-    def create(self, args, name='winws', description='zapret DPI bypass software', start='auto'):
-        args = ' '.join(args)
-        binPath = f'"{self.exec_dir}winws.exe" {args}'
-        displayName = f'zapret DPI bypass : {name}'
-        self.delete(name)
-        sp.run(['sc', 'create', name, 'start=', start, 'binPath=', binPath, 'DisplayName=', displayName])
-        sp.run(['sc', 'description', name, description])
+EXEC_DIR = os.path.abspath('zapret-win-bundle-master\\zapret-winws')
+
+class Exec:
+    def __init__(self, exec_dir=EXEC_DIR):
+        self.exec_dir = os.path.abspath(exec_dir)
+        self.name='winws'
+
+    def start(self, args):
+        sp.run([f'{self.exec_dir}\\winws.exe', *args])
+
+    def stop(self):
+        sp.run(['taskkill', '/F', '/IM', 'winws.exe'])
+
 
 
     def delete(self, name='winws'):

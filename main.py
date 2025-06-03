@@ -15,6 +15,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         
         self.updater = Updater()
+        self.z_exec = zapi.Exec()
         self.z_service = zapi.Service()
         self.z_task = zapi.Task()
 
@@ -61,7 +62,19 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.pushButton_13.clicked.connect(self.start_task)
             self.pushButton_14.clicked.connect(self.stop_task)
         else:
-            pass
+            self.pushButton_13.clicked.connect(self.start_exec)
+            self.pushButton_14.clicked.connect(self.stop_exec)
+
+    def start_exec(self):
+        if self.filters_window.z_args:
+            self.z_exec.start(self.filters_window.z_args)
+            QtWidgets.QMessageBox.information(self, 'Info', 'zapret started!')
+        else:
+            QtWidgets.QMessageBox.information(self, 'Error', 'Add filters and try again!')
+
+    def stop_exec(self):
+        self.z_exec.stop()
+        QtWidgets.QMessageBox.information(self, 'Info', 'zapret stopped!')
 
     def create_service(self):
         if self.filters_window.z_args:
