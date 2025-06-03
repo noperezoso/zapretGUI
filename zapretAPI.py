@@ -1,11 +1,6 @@
 import subprocess as sp
 import os
 
-class Service:
-    def __init__(self, zapret_dir=None):
-        if not zapret_dir:
-            zapret_dir = os.getcwd() + '\\zapret-win-bundle-master\\zapret-winws'
-        self.exec_dir = os.path.abspath(zapret_dir) + '\\'
 
 EXEC_DIR = os.path.abspath('zapret-win-bundle-master\\zapret-winws')
 
@@ -21,38 +16,42 @@ class Exec:
         sp.run(['taskkill', '/F', '/IM', 'winws.exe'])
 
 
-
-    def delete(self, name='winws'):
-        self.stop(name)
-        sp.run(['sc', 'delete', name])
-
-    def start(self, name='winws'):
-        sp.run(['sc', 'start', name])
-
-    def stop(self, name='winws'):
-        sp.run(['net', 'stop', name])
-
-
-class Task:
-    def __init__(self, zapret_dir=None):
-        if not zapret_dir:
-            zapret_dir = os.getcwd() + '\\zapret-win-bundle-master\\zapret-winws'
-        self.exec_dir = os.path.abspath(zapret_dir) + '\\'
-
-    def create(self, args, name='winws', schedule='onstart'):
+class Service(Exec):
+    def create(self, args, description='zapret DPI bypass software', start='auto'):
         args = ' '.join(args)
-        binPath = f'"{self.exec_dir}winws.exe" {args}'
-        sp.run(['schtasks', '/Create', '/F', '/TN', name, '/NP', '/RU', '', '/SC', schedule, '/TR', binPath])
+        binPath = f'"{self.exec_dir}\\winws.exe" {args}'
+        displayName = f'zapret DPI bypass : {self.name}'
+        self.delete()
+        sp.run(['sc', 'create', self.name, 'start=', start, 'binPath=', binPath, 'DisplayName=', displayName])
+        sp.run(['sc', 'description', self.name, description])
 
-    def delete(self, name='winws'):
-        self.stop(name)
-        sp.run(['schtasks', '/Delete', '/TN', name, '/F'])
 
-    def start(self, name='winws'):
-        sp.run(['schtasks', '/Run', '/TN', name])
+    def delete(self):
+        self.stop()
+        sp.run(['sc', 'delete', self.name])
 
-    def stop(self, name='winws'):
-        sp.run(['schtasks', '/End', '/TN', name])
+    def start(self):
+        sp.run(['sc', 'start', self.name])
+
+    def stop(self):
+        sp.run(['net', 'stop', self.name])
+
+
+class Task(Exec):
+    def create(self, args, schedule='onstart'):
+        args = ' '.join(args)
+        binPath = f'"{self.exec_dir}\\winws.exe" {args}'
+        sp.run(['schtasks', '/Create', '/F', '/TN', self.name, '/NP', '/RU', '', '/SC', schedule, '/TR', binPath])
+
+    def delete(self):
+        self.stop()
+        sp.run(['schtasks', '/Delete', '/TN', self.name, '/F'])
+
+    def start(self):
+        sp.run(['schtasks', '/Run', '/TN', self.name])
+
+    def stop(self):
+        sp.run(['schtasks', '/End', '/TN', self.name])
 
 
 class ArgParser:
