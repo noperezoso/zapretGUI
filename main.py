@@ -28,6 +28,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.filters_window = FiltersWindow(self)
         self.pushButton_02.clicked.connect(self.open_filters)
 
+        self.pushButton_13.clicked.connect(self.start_exec)
+        self.pushButton_14.clicked.connect(self.stop_exec)
+
         self.buttonGroup_11 = QButtonGroup()
         self.buttonGroup_11.addButton(self.radioButton_11)
         self.buttonGroup_11.addButton(self.radioButton_12)
@@ -50,6 +53,11 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def on_radiobutton_toggled(self):
         '''Change push buttons functions depending on radio button selected.'''
+        self.pushButton_11.clicked.disconnect()
+        self.pushButton_12.clicked.disconnect()
+        self.pushButton_13.clicked.disconnect()
+        self.pushButton_14.clicked.disconnect()
+
         selected_button = self.buttonGroup_11.checkedButton()
         if selected_button == self.radioButton_12:
             self.pushButton_11.clicked.connect(self.create_service)
