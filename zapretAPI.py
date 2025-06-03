@@ -50,16 +50,13 @@ class Task:
 
 
 class ArgParser:
-    def __init__(self, zapret_dir=None, strategies_dir=None):
-        if not zapret_dir:
-            zapret_dir = os.getcwd() + '\\zapret-win-bundle-master\\zapret-winws'
-        if not strategies_dir:
-            self.strat_dir = zapret_dir
-        else:
+    def __init__(self, strategies_dir=None):
+        if strategies_dir:
             self.strat_dir = strategies_dir
-        self.exec_dir = os.path.abspath(zapret_dir) + '\\'
+        else:
+            self.strat_dir = EXEC_DIR
         
-        self.strat_files = self.get_strat_files(self.strat_dir)
+        self.get_strat_files()
 
     def filter_args(self, args):
         if type(args) is str:
@@ -72,6 +69,19 @@ class ArgParser:
         
         return args
 
+    def get_strat_files(self):
+        '''Get the list of strategy files.'''
+        if not os.path.exists(self.strat_dir):
+            self.strat_files = dict()
+            return
+        
+        strat_files = dict()
+        for obj in os.listdir(self.strat_dir):
+            if obj.rsplit('.')[-1] in ('cmd', 'bat'):
+                strat_files.update([[obj, f'{self.strat_dir}\\{obj}']])
+        
+        self.strat_files = strat_files
+
     def import_args(self, path):
         with open(path, 'r') as arg_source:
             arg_lines = list()
@@ -79,14 +89,3 @@ class ArgParser:
                 if line[0]=='-':
                     arg_lines.append(line)
         return ''.join(arg_lines)
-
-    def get_strat_files(self, strat_dir):
-        if not os.path.exists(strat_dir):
-            return dict()
-        
-        strat_files = dict()
-        for obj in os.listdir(strat_dir):
-            if obj.rsplit('.')[-1] in ('cmd', 'bat'):
-                strat_files.update([[obj, f'{strat_dir}\\{obj}']])
-        
-        return strat_files
